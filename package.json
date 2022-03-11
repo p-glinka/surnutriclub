@@ -4,7 +4,8 @@
   "description": "Este es el proyecto final del curso de programacion web inicial verano",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
   },
   "author": "Paulo Glinka",
   "license": "ISC",
