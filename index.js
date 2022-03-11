@@ -7,6 +7,7 @@ const path = require("path");
 const hbs = require("hbs");  
 // traigo la libreria para la conexion
 const mysql = require("mysql2"); 
+const { dirname } = require("path");
 
 // Creo la coneccion
 const conexion = mysql.createConnection({
@@ -16,12 +17,12 @@ const conexion = mysql.createConnection({
     password:"m32hh1100",
     database: "surnutriclubDB"
 });
-
+    
 // conecto a la base de datos
 
- conexion.connect((error) =>{
+conexion.connect((error) =>{
     if(error) throw error;
-    console.log("conexion a la Base de Datos Exitosa") 
+    console.log("Conexion a la Base de Datos Exitosa") 
 });  
 
 
@@ -39,46 +40,61 @@ hbs.registerPartials(path.join(__dirname,"views/partials"));
 app.get("/", (req, res) =>{
     res.render("index", {titulo: "Home"})
 });   
-
 app.get("/formulario", (req, res) =>{
     res.render("formulario", {titulo: "formulario para completar"})
 }); 
-
 app.get("/productos", (req, res) =>{
     res.render("productos", {titulo: "Productos"})
 });  
-
-/*res.json({
-        Dato: "recibido"   
-    });*/
-    //Desestructuro las Variables
-
-app.post("/formulario", (req, res) =>{ 
-const { nombre, apellido,mail } = req.body
-    if(nombre =="" || apellido == "" || mail == ""){
-        let validacion = "Faltan datos para registrarte"
-        res.render("formulario", {
-        titulo: "Completa el formulario ", validacion
-    } );
-}else{
-    console.log(nombre);
-    console.log(apellido);
-    console.log(mail);
-    res.render("index",{
-        titulo: "index,"
-    })
-}
-}) 
 
 app.get("/sobrenosotros", (req, res) =>{
     res.render("sobrenosotros", {titulo: "Sobre Nosotros "})
 }); 
 
+/*res.json({
+        Dato: "recibido"   
+    });*/
+    //Desestructuro las Variables
+    app.post("/formulario", (req, res) =>{ 
+const { nombre, apellido, dni, telefono, mail, fechadenacimiento } = req.body
+    if(nombre =="" || apellido == "" || mail == ""){
+        let validacion = "Faltan datos para registrarte"
+        res.render("formulario", {
+        titulo: "Completa el formulario ", validacion
+    } );  
+}else{
+    console.log(nombre);
+    console.log(apellido);
+    console.log(dni);  
+    console.log(telefono);
+    console.log(mail);
+    console.log(fechadenacimiento);
 
-
+    let data = {
+        nombre: nombre,
+        apellido: apellido,
+        dni: dni,
+        telefono: telefono,
+        mail: mail, 
+        fechadenacimiento: fechadenacimiento,
+    }
+ 
+    let sql = "insert into usuario set ?"; 
+    conexion.query(sql, data, (error, results) =>{
+        if(error)throw error;
+        res.render("usuario",{ 
+            titulo: "usuario"
+        }
+    );
+    });
+}; 
+});
+/*conexion.end();*/
+    
 app.listen(Port, () =>{
     console.log("el servidor esta trabajando en el puerto ${Port}" + Port ) ;
 });
 app.on("error", (err) =>{
     console.log("Error en la ejecucion del servidor ${error}");
-});
+}); 
+ 
