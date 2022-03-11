@@ -1,13 +1,13 @@
 // constantes que utiliza todo el codigo del paquete que instalamos
-require('dotenv').config()
+require('dotenv').config();
 const express = require("express");
 const app = express();
-const Port = process.env.Port
+const Port = process.env.Port || 3000 
 const path = require("path"); 
 const hbs = require("hbs");  
-// traigo la libreria para la conexion
+// traigo la libreria para la conexion   
 const mysql = require("mysql2"); 
-const { dirname } = require("path");
+const { dirname } = require("path");    
 
 // Creo la coneccion
 /*const conexion = mysql.createConnection({
