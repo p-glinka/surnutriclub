@@ -14,7 +14,7 @@ const { dirname } = require("path");
 const conexion = mysql.createConnection({    
     host: "localhost",
     port: 3306,           
-    user: "root",                  
+    user: "root",                         
     password:"m32hh1100",                          
     database: "surnutriclubDB"                                                                        
 });                                                     
