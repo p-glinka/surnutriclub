@@ -15,7 +15,7 @@ const conexion = mysql.createConnection({
     host: "localhost",
     port: 3306,           
     user: "root",                         
-    password:"m32hh1100",                          
+    password:"m32hh1100",                             
     database: "surnutriclubDB"                                                                        
 });                                                     
 // conecto a la base de datos                                               
@@ -84,7 +84,7 @@ const { nombre, apellido, dni, telefono, mail, fechadenacimiento } = req.body
         if(error)throw error;  
     res.render("index", {titulo: "Sur Nutri Club"})
     });   
-};    
+};       
 });
 /*conexion.end();*/
     
