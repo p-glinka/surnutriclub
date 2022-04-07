@@ -1,0 +1,65 @@
+*{
+    margin:0;
+    padding:0;
+} 
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+/*Nav Var*/
+.navbar {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+}
+
+.nav-item :hover{
+    color: rgb(28, 9, 110); 
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.contenedoricono{
+	
+	
+text-decoration: none;
+display: block;
+padding: 35px;
+color: white;
+}
+
+/*Header*/
+.containerlogo{
+background-image: url("../multimedia/carrussell/240_F_280935125_18voRHwA7nfOx9YVuz4lEK9vamBUHkm9.jpg");
+display: flex;
+justify-content: center;
+width: 90vw;
+margin-left: auto;
+margin-right: auto;
+margin-top: 1em;
+border-radius: 6px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+}
+.logochico
+{
+    display: flex;
+    justify-content:right;
+    border-radius: 4px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+/*texto  de las pagina principal*/
+.contenedorcuadros {
+    margin-top: 3em;
+}
+
+.data ul li a{
+    text-decoration:none;
+    text-decoration-color: black;
+}
+
+
