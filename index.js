@@ -7,7 +7,7 @@ const path = require("path");
 const hbs = require("hbs");  
 const nonemailer =require("nodemailer");
 // traigo la libreria para la conexion   
-const mysql = require("mysql2"); 
+const mysql = require("mysql2");    
 const { dirname } = require("path");         
 
 // Creo la configuracion para la coneccion
