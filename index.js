@@ -18,7 +18,7 @@ const conexion = mysql.createConnection({
     password:"m32hh1100",                             
     database: "surnutriclubDB"                                                                        
 });                                                     
-// conecto a la base de datos                                               
+// conecto a la base de datos                                                  
 conexion.connect((error) =>{                         
     if(error) throw error;                     
     console.log("Conexion a la Base de Datos Exitosa");                 
@@ -49,9 +49,9 @@ app.get("/productos", (req, res) =>{
 
 app.get("/sobrenosotros", (req, res) =>{
     res.render("sobrenosotros", {titulo: "Conoce Mas Sobre la gente que Trabaja con Nosotros"})
-});   
+});      
 
-/*res.json({
+/*res.json({   
         Dato: "recibido"       
     });*/
     //Desestructuro las Variables  
