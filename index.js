@@ -2,7 +2,7 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3000 
+const Port = process.env.PORT || 3000 
 const path = require("path"); 
 const hbs = require("hbs");  
 const nonemailer =require("nodemailer");
@@ -21,7 +21,7 @@ const conexion = mysql.createConnection({
 // conecto a la base de datos                                                  
 conexion.connect((error) =>{                         
     if(error) throw error;                     
-    console.log("Conexion a la Base de Datos Exitosa");                 
+    console.log("Conexion a la Base de Datos Exitosa");                   
 });                                        
             
 // Middelware : Funciones que realizan una tarea especifica en el Servidor   
@@ -92,6 +92,6 @@ app.listen(Port, () =>{
     console.log(`el servidor esta trabajando en el puerto ${Port}`) ;  
 });
 app.on("error", (err) =>{
-    console.log(`Error en la ejecucion del servidor ${error}`);  
+    console.log(`Error en la ejecucion del servidor ${error}`);       
 });                     
     
