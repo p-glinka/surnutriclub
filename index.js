@@ -2,27 +2,27 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
-const Port = process.env.PORT || 3000 
+const PORT = process.env.PORT || 3000
 const path = require("path"); 
 const hbs = require("hbs");  
 const nonemailer =require("nodemailer");
-// traigo la libreria para la conexion   
+// traigo la libreria para la conexion     
 const mysql = require("mysql2");    
-const { dirname } = require("path");         
+const { dirname } = require("path");          
 
 // Creo la configuracion para la coneccion
-const conexion = mysql.createConnection({    
+/*const conexion = mysql.createConnection({    
     host: "localhost",
     port: 3306,           
     user: "root",                         
     password:"m32hh1100",                             
     database: "surnutriclubDB"                                                                        
-});                                                     
+}); */                                                    
 // conecto a la base de datos                                                  
-conexion.connect((error) =>{                         
+/*conexion.connect((error) =>{                         
     if(error) throw error;                     
     console.log("Conexion a la Base de Datos Exitosa");                   
-});                                        
+});     */                                   
             
 // Middelware : Funciones que realizan una tarea especifica en el Servidor   
 app.use(express.json());         
@@ -88,8 +88,8 @@ const { nombre, apellido, dni, telefono, mail, fechadenacimiento } = req.body
 });
 /*conexion.end();*/
     
-app.listen(Port, () =>{
-    console.log(`el servidor esta trabajando en el puerto ${Port}`) ;  
+app.listen(PORT, () =>{
+    console.log(`el servidor esta trabajando en el puerto ${PORT}`) ;  
 });
 app.on("error", (err) =>{
     console.log(`Error en la ejecucion del servidor ${error}`);       
