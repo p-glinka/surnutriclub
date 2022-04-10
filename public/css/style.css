@@ -17,9 +17,8 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
 .contenedoricono{
-	
-	
 text-decoration: none;
 display: block;
 padding: 35px;
@@ -37,6 +36,7 @@ margin-right: auto;
 margin-top: 1em;
 border-radius: 6px;
 }
+/*logos*/
 .logo{
     display: flex;
     justify-content: center;
@@ -52,14 +52,14 @@ border-radius: 6px;
 }
 
 
-/*texto  de las pagina principal*/
+/*texto   pagina principal*/
 .contenedorcuadros {
     margin-top: 3em;
+    border-radius: 6px;
 }
-
 .data ul li a{
     text-decoration:none;
-    text-decoration-color: black;
+    text-decoration-color:black;
+    
 }
-
 

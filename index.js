@@ -11,18 +11,18 @@ const mysql = require("mysql2");
 const { dirname } = require("path");          
 
 // Creo la configuracion para la coneccion
-/*const conexion = mysql.createConnection({    
+/* const conexion = mysql.createConnection({    
     host: "localhost",
     port: 3306,           
     user: "root",                         
     password:"m32hh1100",                             
     database: "surnutriclubDB"                                                                        
-}); */                                                    
-// conecto a la base de datos                                                  
-/*conexion.connect((error) =>{                         
+}); */                                                   
+// conecto a la base de datos                                                   
+/*conexion.connect((error) =>{                                    
     if(error) throw error;                     
     console.log("Conexion a la Base de Datos Exitosa");                   
-});     */                                   
+}); */                                      
             
 // Middelware : Funciones que realizan una tarea especifica en el Servidor   
 app.use(express.json());         
